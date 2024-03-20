@@ -1,0 +1,14 @@
+workflowVersion: 1.0.0
+sources:
+    unkey-spec:
+        inputs:
+            - location: unkey.json
+targets:
+    unkey-go:
+        target: go
+        source: unkey-spec
+        output: ./go
+    unkey-ts:
+        target: typescript
+        source: unkey-spec
+        output: ./typescript
