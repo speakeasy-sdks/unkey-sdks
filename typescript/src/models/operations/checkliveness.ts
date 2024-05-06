@@ -30,7 +30,7 @@ export type Services = {
 /**
  * The configured services and their status
  */
-export type GetV1LivenessResponseBody = {
+export type CheckLivenessResponseBody = {
     /**
      * The status of the server
      */
@@ -94,13 +94,13 @@ export namespace Services$ {
 }
 
 /** @internal */
-export namespace GetV1LivenessResponseBody$ {
+export namespace CheckLivenessResponseBody$ {
     export type Inbound = {
         status: string;
         services: Services$.Inbound;
     };
 
-    export const inboundSchema: z.ZodType<GetV1LivenessResponseBody, z.ZodTypeDef, Inbound> = z
+    export const inboundSchema: z.ZodType<CheckLivenessResponseBody, z.ZodTypeDef, Inbound> = z
         .object({
             status: z.string(),
             services: z.lazy(() => Services$.inboundSchema),
@@ -117,7 +117,7 @@ export namespace GetV1LivenessResponseBody$ {
         services: Services$.Outbound;
     };
 
-    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, GetV1LivenessResponseBody> = z
+    export const outboundSchema: z.ZodType<Outbound, z.ZodTypeDef, CheckLivenessResponseBody> = z
         .object({
             status: z.string(),
             services: z.lazy(() => Services$.outboundSchema),

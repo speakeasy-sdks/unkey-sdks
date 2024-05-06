@@ -126,7 +126,7 @@ export type Key = {
 };
 
 /** @internal */
-export const Interval$ = z.nativeEnum(Interval);
+export const Interval$: z.ZodNativeEnum<typeof Interval> = z.nativeEnum(Interval);
 
 /** @internal */
 export namespace Refill$ {
@@ -172,7 +172,7 @@ export namespace Refill$ {
 }
 
 /** @internal */
-export const Type$ = z.nativeEnum(Type);
+export const Type$: z.ZodNativeEnum<typeof Type> = z.nativeEnum(Type);
 
 /** @internal */
 export namespace Ratelimit$ {

@@ -54,41 +54,41 @@ func (o *Services) GetAnalytics() string {
 	return o.Analytics
 }
 
-// GetV1LivenessResponseBody - The configured services and their status
-type GetV1LivenessResponseBody struct {
+// CheckLivenessResponseBody - The configured services and their status
+type CheckLivenessResponseBody struct {
 	// The status of the server
 	Status   string   `json:"status"`
 	Services Services `json:"services"`
 }
 
-func (o *GetV1LivenessResponseBody) GetStatus() string {
+func (o *CheckLivenessResponseBody) GetStatus() string {
 	if o == nil {
 		return ""
 	}
 	return o.Status
 }
 
-func (o *GetV1LivenessResponseBody) GetServices() Services {
+func (o *CheckLivenessResponseBody) GetServices() Services {
 	if o == nil {
 		return Services{}
 	}
 	return o.Services
 }
 
-type GetV1LivenessResponse struct {
+type CheckLivenessResponse struct {
 	HTTPMeta components.HTTPMetadata
 	// The configured services and their status
-	Object *GetV1LivenessResponseBody
+	Object *CheckLivenessResponseBody
 }
 
-func (o *GetV1LivenessResponse) GetHTTPMeta() components.HTTPMetadata {
+func (o *CheckLivenessResponse) GetHTTPMeta() components.HTTPMetadata {
 	if o == nil {
 		return components.HTTPMetadata{}
 	}
 	return o.HTTPMeta
 }
 
-func (o *GetV1LivenessResponse) GetObject() *GetV1LivenessResponseBody {
+func (o *CheckLivenessResponse) GetObject() *CheckLivenessResponseBody {
 	if o == nil {
 		return nil
 	}

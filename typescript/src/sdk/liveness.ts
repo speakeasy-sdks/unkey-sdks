@@ -37,7 +37,7 @@ export class Liveness extends ClientSDK {
         void this.options$;
     }
 
-    async getV1Liveness(options?: RequestOptions): Promise<operations.GetV1LivenessResponseBody> {
+    async checkLiveness(options?: RequestOptions): Promise<operations.CheckLivenessResponseBody> {
         const headers$ = new Headers();
         headers$.set("user-agent", SDK_METADATA.userAgent);
         headers$.set("Accept", "application/json");
@@ -55,7 +55,7 @@ export class Liveness extends ClientSDK {
             security$ = {};
         }
         const context = {
-            operationID: "get_/v1/liveness",
+            operationID: "checkLiveness",
             oAuth2Scopes: [],
             securitySource: this.options$.rootKey,
         };
@@ -66,6 +66,7 @@ export class Liveness extends ClientSDK {
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
         };
         const request = this.createRequest$(
+            context,
             {
                 security: securitySettings$,
                 method: "GET",
@@ -90,7 +91,7 @@ export class Liveness extends ClientSDK {
             const result = schemas$.parse(
                 responseBody,
                 (val$) => {
-                    return operations.GetV1LivenessResponseBody$.inboundSchema.parse(val$);
+                    return operations.CheckLivenessResponseBody$.inboundSchema.parse(val$);
                 },
                 "Response validation failed"
             );
@@ -188,7 +189,11 @@ export class Liveness extends ClientSDK {
             throw result;
         } else {
             const responseBody = await response.text();
-            throw new errors.SDKError("Unexpected API response", response, responseBody);
+            throw new errors.SDKError(
+                "Unexpected API response status or content-type",
+                response,
+                responseBody
+            );
         }
     }
 }

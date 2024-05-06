@@ -45,7 +45,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -62,7 +62,7 @@ func main() {
 
 ### [Liveness](docs/sdks/liveness/README.md)
 
-* [GetV1Liveness](docs/sdks/liveness/README.md#getv1liveness)
+* [CheckLiveness](docs/sdks/liveness/README.md#checkliveness)
 
 ### [Keys](docs/sdks/keys/README.md)
 
@@ -118,7 +118,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 
 		var e *sdkerrors.ErrBadRequest
@@ -204,7 +204,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -236,7 +236,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -304,7 +304,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

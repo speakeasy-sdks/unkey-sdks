@@ -62,7 +62,8 @@ export class ErrConflict extends Error {
 }
 
 /** @internal */
-export const ErrConflictCode$ = z.nativeEnum(ErrConflictCode);
+export const ErrConflictCode$: z.ZodNativeEnum<typeof ErrConflictCode> =
+    z.nativeEnum(ErrConflictCode);
 
 /** @internal */
 export namespace ErrConflictError$ {

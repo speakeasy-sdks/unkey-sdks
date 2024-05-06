@@ -1,0 +1,39 @@
+speakeasyVersion: 1.279.0
+sources:
+    unkey-spec:
+        sourceNamespace: unkey-spec
+        sourceRevisionDigest: sha256:8a9b1db3458b8959d9130849fa9b0fec55423f6dae059ff71a8649d2a26d786f
+        sourceBlobDigest: sha256:aec89a15c8218f64cf43e01cfb61b12007cb454a4f213d979c04580c5ab3406d
+        tags:
+            - latest
+targets:
+    unkey-go:
+        source: unkey-spec
+        sourceNamespace: unkey-spec
+        sourceRevisionDigest: sha256:8a9b1db3458b8959d9130849fa9b0fec55423f6dae059ff71a8649d2a26d786f
+        sourceBlobDigest: sha256:aec89a15c8218f64cf43e01cfb61b12007cb454a4f213d979c04580c5ab3406d
+        outLocation: ./go
+    unkey-ts:
+        source: unkey-spec
+        sourceNamespace: unkey-spec
+        sourceRevisionDigest: sha256:8a9b1db3458b8959d9130849fa9b0fec55423f6dae059ff71a8649d2a26d786f
+        sourceBlobDigest: sha256:aec89a15c8218f64cf43e01cfb61b12007cb454a4f213d979c04580c5ab3406d
+        outLocation: ./typescript
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        unkey-spec:
+            inputs:
+                - location: unkey.json
+            registry:
+                location: registry.speakeasyapi.dev/sagar-demo/sagar-demo/unkey-spec
+    targets:
+        unkey-go:
+            target: go
+            source: unkey-spec
+            output: ./go
+        unkey-ts:
+            target: typescript
+            source: unkey-spec
+            output: ./typescript

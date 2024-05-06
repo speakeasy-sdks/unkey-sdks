@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: 1b965a39-857d-4b45-a979-7f88c2374f02
 management:
-  docChecksum: 377e036f249c19d838b4b6b51ac2b48e
+  docChecksum: e97e94ff48a4ae6f6fa14127cbc8e999
   docVersion: 1.0.0
-  speakeasyVersion: 1.213.0
-  generationVersion: 2.283.1
-  releaseVersion: 0.0.1
-  configChecksum: 2c71011808837b3a7642878ccd11d973
+  speakeasyVersion: 1.279.0
+  generationVersion: 2.322.5
+  releaseVersion: 0.0.2
+  configChecksum: 0a5fbec104ac3f52969573c3f99e2fbe
 features:
   go:
     constsAndDefaults: 0.1.4
-    core: 3.4.4
+    core: 3.4.7
     flattening: 2.81.1
     globalSecurity: 2.82.9
     globalServerURLs: 2.82.2
-    responseFormat: 0.1.0
+    responseFormat: 0.1.1
 generatedFiles:
   - liveness.go
   - keys.go
@@ -37,7 +37,7 @@ generatedFiles:
   - internal/utils/retries.go
   - internal/utils/security.go
   - internal/utils/utils.go
-  - /models/operations/getv1liveness.go
+  - /models/operations/checkliveness.go
   - /models/operations/getkey.go
   - /models/operations/deletekey.go
   - /models/operations/createkey.go
@@ -62,8 +62,8 @@ generatedFiles:
   - /models/sdkerrors/errtoomanyrequests.go
   - /models/sdkerrors/errinternalservererror.go
   - docs/models/operations/services.md
-  - docs/models/operations/getv1livenessresponsebody.md
-  - docs/models/operations/getv1livenessresponse.md
+  - docs/models/operations/checklivenessresponsebody.md
+  - docs/models/operations/checklivenessresponse.md
   - docs/models/operations/getkeyrequest.md
   - docs/models/operations/getkeyresponse.md
   - docs/models/operations/deletekeyrequestbody.md

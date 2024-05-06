@@ -2,12 +2,12 @@
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-    const result = await sdk.liveness.getV1Liveness();
+async function run() {
+    const result = await unkeyTs.liveness.checkLiveness();
 
     // Handle the result
     console.log(result);

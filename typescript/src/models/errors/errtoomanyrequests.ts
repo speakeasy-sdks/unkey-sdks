@@ -62,7 +62,8 @@ export class ErrTooManyRequests extends Error {
 }
 
 /** @internal */
-export const ErrTooManyRequestsCode$ = z.nativeEnum(ErrTooManyRequestsCode);
+export const ErrTooManyRequestsCode$: z.ZodNativeEnum<typeof ErrTooManyRequestsCode> =
+    z.nativeEnum(ErrTooManyRequestsCode);
 
 /** @internal */
 export namespace ErrTooManyRequestsError$ {

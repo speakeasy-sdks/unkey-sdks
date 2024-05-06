@@ -1,4 +1,4 @@
-# GetV1LivenessResponse
+# CheckLivenessResponse
 
 
 ## Fields
@@ -6,4 +6,4 @@
 | Field                                                                                         | Type                                                                                          | Required                                                                                      | Description                                                                                   |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `HTTPMeta`                                                                                    | [components.HTTPMetadata](../../models/components/httpmetadata.md)                            | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `Object`                                                                                      | [*operations.GetV1LivenessResponseBody](../../models/operations/getv1livenessresponsebody.md) | :heavy_minus_sign:                                                                            | The configured services and their status                                                      |
+| `Object`                                                                                      | [*operations.CheckLivenessResponseBody](../../models/operations/checklivenessresponsebody.md) | :heavy_minus_sign:                                                                            | The configured services and their status                                                      |

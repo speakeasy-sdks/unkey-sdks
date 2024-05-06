@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: ee770454-4663-424e-b470-e7342ccf2ec5
 management:
-  docChecksum: 377e036f249c19d838b4b6b51ac2b48e
+  docChecksum: e97e94ff48a4ae6f6fa14127cbc8e999
   docVersion: 1.0.0
-  speakeasyVersion: 1.213.0
-  generationVersion: 2.283.1
-  releaseVersion: 0.0.1
-  configChecksum: ed43060628545bf352e2680e7138fcf2
+  speakeasyVersion: 1.279.0
+  generationVersion: 2.322.5
+  releaseVersion: 0.1.0
+  configChecksum: 4f105220626dc447e256bb9e62fd22dd
 features:
   typescript:
     constsAndDefaults: 0.1.5
-    core: 3.6.3
+    core: 3.9.3
     flattening: 2.81.1
-    globalSecurity: 2.82.8
+    globalSecurity: 2.82.9
     globalServerURLs: 2.82.4
-    responseFormat: 0.2.2
+    responseFormat: 0.2.3
 generatedFiles:
   - src/sdk/liveness.ts
   - src/sdk/keys.ts
@@ -23,6 +23,7 @@ generatedFiles:
   - .eslintrc.js
   - .npmignore
   - RUNTIMES.md
+  - jsr.json
   - package.json
   - src/index.ts
   - src/lib/base64.ts
@@ -42,7 +43,7 @@ generatedFiles:
   - src/types/operations.ts
   - src/types/rfcdate.ts
   - tsconfig.json
-  - src/models/operations/getv1liveness.ts
+  - src/models/operations/checkliveness.ts
   - src/models/operations/getkey.ts
   - src/models/operations/deletekey.ts
   - src/models/operations/createkey.ts
@@ -68,7 +69,7 @@ generatedFiles:
   - src/models/operations/index.ts
   - src/models/components/index.ts
   - docs/models/operations/services.md
-  - docs/models/operations/getv1livenessresponsebody.md
+  - docs/models/operations/checklivenessresponsebody.md
   - docs/models/operations/getkeyrequest.md
   - docs/models/operations/deletekeyrequestbody.md
   - docs/models/operations/deletekeyresponsebody.md

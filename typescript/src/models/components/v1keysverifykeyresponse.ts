@@ -152,7 +152,7 @@ export namespace V1KeysVerifyKeyResponseRatelimit$ {
 }
 
 /** @internal */
-export const Code$ = z.nativeEnum(Code);
+export const Code$: z.ZodNativeEnum<typeof Code> = z.nativeEnum(Code);
 
 /** @internal */
 export namespace V1KeysVerifyKeyResponse$ {

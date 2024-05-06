@@ -62,7 +62,8 @@ export class ErrUnauthorized extends Error {
 }
 
 /** @internal */
-export const ErrUnauthorizedCode$ = z.nativeEnum(ErrUnauthorizedCode);
+export const ErrUnauthorizedCode$: z.ZodNativeEnum<typeof ErrUnauthorizedCode> =
+    z.nativeEnum(ErrUnauthorizedCode);
 
 /** @internal */
 export namespace ErrUnauthorizedError$ {

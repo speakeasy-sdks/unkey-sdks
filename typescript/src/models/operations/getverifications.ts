@@ -49,7 +49,7 @@ export type GetVerificationsResponseBody = {
 };
 
 /** @internal */
-export const Granularity$ = z.nativeEnum(Granularity);
+export const Granularity$: z.ZodNativeEnum<typeof Granularity> = z.nativeEnum(Granularity);
 
 /** @internal */
 export namespace GetVerificationsRequest$ {

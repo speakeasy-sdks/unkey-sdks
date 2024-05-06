@@ -15,14 +15,14 @@
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
+async function run() {
   const apiId = "api_1234";
   
-  const result = await sdk.apis.getApi(apiId);
+  const result = await unkeyTs.apis.getApi(apiId);
 
   // Handle the result
   console.log(result)
@@ -63,12 +63,12 @@ run();
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.apis.createApi({
+async function run() {
+  const result = await unkeyTs.apis.createApi({
     name: "my-api",
   });
 
@@ -111,17 +111,17 @@ run();
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
+async function run() {
   const apiId = "api_1234";
   const limit = 100;
   const cursor = "<value>";
   const ownerId = "<value>";
   
-  const result = await sdk.apis.listKeys(apiId, limit, cursor, ownerId);
+  const result = await unkeyTs.apis.listKeys(apiId, limit, cursor, ownerId);
 
   // Handle the result
   console.log(result)
@@ -165,12 +165,12 @@ run();
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.apis.deleteApi({
+async function run() {
+  const result = await unkeyTs.apis.deleteApi({
     apiId: "api_1234",
   });
 

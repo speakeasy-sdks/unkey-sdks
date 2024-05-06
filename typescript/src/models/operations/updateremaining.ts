@@ -39,7 +39,7 @@ export type UpdateRemainingResponseBody = {
 };
 
 /** @internal */
-export const Op$ = z.nativeEnum(Op);
+export const Op$: z.ZodNativeEnum<typeof Op> = z.nativeEnum(Op);
 
 /** @internal */
 export namespace UpdateRemainingRequestBody$ {

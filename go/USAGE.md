@@ -15,7 +15,7 @@ func main() {
 	)
 
 	ctx := context.Background()
-	res, err := s.Liveness.GetV1Liveness(ctx)
+	res, err := s.Liveness.CheckLiveness(ctx)
 	if err != nil {
 		log.Fatal(err)
 	}

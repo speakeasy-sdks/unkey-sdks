@@ -46,12 +46,12 @@ For supported JavaScript runtimes, please consult [RUNTIMES.md](RUNTIMES.md).
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-    const result = await sdk.liveness.getV1Liveness();
+async function run() {
+    const result = await unkeyTs.liveness.checkLiveness();
 
     // Handle the result
     console.log(result);
@@ -67,7 +67,7 @@ run();
 
 ### [liveness](docs/sdks/liveness/README.md)
 
-* [getV1Liveness](docs/sdks/liveness/README.md#getv1liveness)
+* [checkLiveness](docs/sdks/liveness/README.md#checkliveness)
 
 ### [keys](docs/sdks/keys/README.md)
 
@@ -110,14 +110,14 @@ Validation errors can also occur when either method arguments or data returned f
 import { UnkeyTs } from "openapi";
 import * as errors from "openapi/models/errors";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
+async function run() {
     let result;
     try {
-        result = await sdk.liveness.getV1Liveness();
+        result = await unkeyTs.liveness.checkLiveness();
     } catch (err) {
         switch (true) {
             case err instanceof errors.SDKValidationError: {
@@ -184,13 +184,13 @@ You can override the default server globally by passing a server index to the `s
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        serverIdx: 0,
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    serverIdx: 0,
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-    const result = await sdk.liveness.getV1Liveness();
+async function run() {
+    const result = await unkeyTs.liveness.checkLiveness();
 
     // Handle the result
     console.log(result);
@@ -208,13 +208,13 @@ The default server can also be overridden globally by passing a URL to the `serv
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        serverURL: "https://api.unkey.dev",
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    serverURL: "https://api.unkey.dev",
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-    const result = await sdk.liveness.getV1Liveness();
+async function run() {
+    const result = await unkeyTs.liveness.checkLiveness();
 
     // Handle the result
     console.log(result);
@@ -289,12 +289,12 @@ To authenticate with the API the `rootKey` parameter must be set when initializi
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-    const sdk = new UnkeyTs({
-        rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-    });
+const unkeyTs = new UnkeyTs({
+    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-    const result = await sdk.liveness.getV1Liveness();
+async function run() {
+    const result = await unkeyTs.liveness.checkLiveness();
 
     // Handle the result
     console.log(result);

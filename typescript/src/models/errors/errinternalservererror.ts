@@ -62,7 +62,8 @@ export class ErrInternalServerError extends Error {
 }
 
 /** @internal */
-export const ErrInternalServerErrorCode$ = z.nativeEnum(ErrInternalServerErrorCode);
+export const ErrInternalServerErrorCode$: z.ZodNativeEnum<typeof ErrInternalServerErrorCode> =
+    z.nativeEnum(ErrInternalServerErrorCode);
 
 /** @internal */
 export namespace ErrInternalServerErrorError$ {

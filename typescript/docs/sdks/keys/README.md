@@ -18,14 +18,14 @@
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
+async function run() {
   const keyId = "key_1234";
   
-  const result = await sdk.keys.getKey(keyId);
+  const result = await unkeyTs.keys.getKey(keyId);
 
   // Handle the result
   console.log(result)
@@ -66,12 +66,12 @@ run();
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.deleteKey({
+async function run() {
+  const result = await unkeyTs.keys.deleteKey({
     keyId: "key_1234",
   });
 
@@ -115,12 +115,12 @@ run();
 import { UnkeyTs } from "openapi";
 import { Interval, Type } from "openapi/models/operations";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.createKey({
+async function run() {
+  const result = await unkeyTs.keys.createKey({
     apiId: "api_123",
     name: "my key",
     ownerId: "team_123",
@@ -186,12 +186,12 @@ run();
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.verifyKey({
+async function run() {
+  const result = await unkeyTs.keys.verifyKey({
     apiId: "api_1234",
     key: "sk_1234",
   });
@@ -236,12 +236,12 @@ run();
 import { UnkeyTs } from "openapi";
 import { UpdateKeyInterval, UpdateKeyType } from "openapi/models/operations";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.updateKey({
+async function run() {
+  const result = await unkeyTs.keys.updateKey({
     keyId: "key_123",
     name: "Customer X",
     ownerId: "user_123",
@@ -304,12 +304,12 @@ run();
 import { UnkeyTs } from "openapi";
 import { Op } from "openapi/models/operations";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.updateRemaining({
+async function run() {
+  const result = await unkeyTs.keys.updateRemaining({
     keyId: "key_123",
     op: Op.Set,
     value: 1,
@@ -355,12 +355,12 @@ run();
 import { UnkeyTs } from "openapi";
 import { Granularity } from "openapi/models/operations";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.keys.getVerifications({
+async function run() {
+  const result = await unkeyTs.keys.getVerifications({
     keyId: "key_1234",
     ownerId: "chronark",
     start: 1620000000000,

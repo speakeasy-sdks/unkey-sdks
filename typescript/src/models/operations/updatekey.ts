@@ -103,7 +103,7 @@ export type UpdateKeyRequestBody = {
 export type UpdateKeyResponseBody = {};
 
 /** @internal */
-export const UpdateKeyType$ = z.nativeEnum(UpdateKeyType);
+export const UpdateKeyType$: z.ZodNativeEnum<typeof UpdateKeyType> = z.nativeEnum(UpdateKeyType);
 
 /** @internal */
 export namespace UpdateKeyRatelimit$ {
@@ -155,7 +155,8 @@ export namespace UpdateKeyRatelimit$ {
 }
 
 /** @internal */
-export const UpdateKeyInterval$ = z.nativeEnum(UpdateKeyInterval);
+export const UpdateKeyInterval$: z.ZodNativeEnum<typeof UpdateKeyInterval> =
+    z.nativeEnum(UpdateKeyInterval);
 
 /** @internal */
 export namespace UpdateKeyRefill$ {

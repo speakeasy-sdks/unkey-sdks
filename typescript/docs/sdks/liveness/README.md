@@ -3,21 +3,21 @@
 
 ### Available Operations
 
-* [getV1Liveness](#getv1liveness)
+* [checkLiveness](#checkliveness)
 
-## getV1Liveness
+## checkLiveness
 
 ### Example Usage
 
 ```typescript
 import { UnkeyTs } from "openapi";
 
-async function run() {
-  const sdk = new UnkeyTs({
-    rootKey: "<YOUR_BEARER_TOKEN_HERE>",
-  });
+const unkeyTs = new UnkeyTs({
+  rootKey: "<YOUR_BEARER_TOKEN_HERE>",
+});
 
-  const result = await sdk.liveness.getV1Liveness();
+async function run() {
+  const result = await unkeyTs.liveness.checkLiveness();
 
   // Handle the result
   console.log(result)
@@ -36,7 +36,7 @@ run();
 
 ### Response
 
-**Promise<[operations.GetV1LivenessResponseBody](../../models/operations/getv1livenessresponsebody.md)>**
+**Promise<[operations.CheckLivenessResponseBody](../../models/operations/checklivenessresponsebody.md)>**
 ### Errors
 
 | Error Object                  | Status Code                   | Content Type                  |

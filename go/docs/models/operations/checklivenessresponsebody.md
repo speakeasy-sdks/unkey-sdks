@@ -1,4 +1,4 @@
-# GetV1LivenessResponseBody
+# CheckLivenessResponseBody
 
 The configured services and their status
 

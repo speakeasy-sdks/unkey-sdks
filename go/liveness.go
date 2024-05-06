@@ -26,10 +26,10 @@ func newLiveness(sdkConfig sdkConfiguration) *Liveness {
 	}
 }
 
-func (s *Liveness) GetV1Liveness(ctx context.Context) (*operations.GetV1LivenessResponse, error) {
+func (s *Liveness) CheckLiveness(ctx context.Context) (*operations.CheckLivenessResponse, error) {
 	hookCtx := hooks.HookContext{
 		Context:        ctx,
-		OperationID:    "get_/v1/liveness",
+		OperationID:    "checkLiveness",
 		OAuth2Scopes:   []string{},
 		SecuritySource: s.sdkConfiguration.Security,
 	}
@@ -67,9 +67,11 @@ func (s *Liveness) GetV1Liveness(ctx context.Context) (*operations.GetV1Liveness
 		_, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, nil, err)
 		return nil, err
 	} else if utils.MatchStatusCodes([]string{"400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"}, httpRes.StatusCode) {
-		httpRes, err = s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
+		_httpRes, err := s.sdkConfiguration.Hooks.AfterError(hooks.AfterErrorContext{HookContext: hookCtx}, httpRes, nil)
 		if err != nil {
 			return nil, err
+		} else if _httpRes != nil {
+			httpRes = _httpRes
 		}
 	} else {
 		httpRes, err = s.sdkConfiguration.Hooks.AfterSuccess(hooks.AfterSuccessContext{HookContext: hookCtx}, httpRes)
@@ -78,7 +80,7 @@ func (s *Liveness) GetV1Liveness(ctx context.Context) (*operations.GetV1Liveness
 		}
 	}
 
-	res := &operations.GetV1LivenessResponse{
+	res := &operations.CheckLivenessResponse{
 		HTTPMeta: components.HTTPMetadata{
 			Request:  req,
 			Response: httpRes,
@@ -96,7 +98,7 @@ func (s *Liveness) GetV1Liveness(ctx context.Context) (*operations.GetV1Liveness
 	case httpRes.StatusCode == 200:
 		switch {
 		case utils.MatchContentType(httpRes.Header.Get("Content-Type"), `application/json`):
-			var out operations.GetV1LivenessResponseBody
+			var out operations.CheckLivenessResponseBody
 			if err := utils.UnmarshalJsonFromResponseBody(bytes.NewBuffer(rawBody), &out, ""); err != nil {
 				return nil, err
 			}

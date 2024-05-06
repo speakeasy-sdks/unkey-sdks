@@ -62,7 +62,8 @@ export class ErrNotFound extends Error {
 }
 
 /** @internal */
-export const ErrNotFoundCode$ = z.nativeEnum(ErrNotFoundCode);
+export const ErrNotFoundCode$: z.ZodNativeEnum<typeof ErrNotFoundCode> =
+    z.nativeEnum(ErrNotFoundCode);
 
 /** @internal */
 export namespace ErrNotFoundError$ {

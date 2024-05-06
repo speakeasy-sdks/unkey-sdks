@@ -3,9 +3,9 @@
 
 ### Available Operations
 
-* [GetV1Liveness](#getv1liveness)
+* [CheckLiveness](#checkliveness)
 
-## GetV1Liveness
+## CheckLiveness
 
 ### Example Usage
 
@@ -25,7 +25,7 @@ func main() {
     )
 
     ctx := context.Background()
-    res, err := s.Liveness.GetV1Liveness(ctx)
+    res, err := s.Liveness.CheckLiveness(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -44,7 +44,7 @@ func main() {
 
 ### Response
 
-**[*operations.GetV1LivenessResponse](../../models/operations/getv1livenessresponse.md), error**
+**[*operations.CheckLivenessResponse](../../models/operations/checklivenessresponse.md), error**
 | Error Object                     | Status Code                      | Content Type                     |
 | -------------------------------- | -------------------------------- | -------------------------------- |
 | sdkerrors.ErrBadRequest          | 400                              | application/json                 |

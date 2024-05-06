@@ -81,6 +81,7 @@ export class Apis extends ClientSDK {
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
         };
         const request = this.createRequest$(
+            context,
             {
                 security: securitySettings$,
                 method: "GET",
@@ -204,7 +205,11 @@ export class Apis extends ClientSDK {
             throw result;
         } else {
             const responseBody = await response.text();
-            throw new errors.SDKError("Unexpected API response", response, responseBody);
+            throw new errors.SDKError(
+                "Unexpected API response status or content-type",
+                response,
+                responseBody
+            );
         }
     }
 
@@ -248,6 +253,7 @@ export class Apis extends ClientSDK {
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
         };
         const request = this.createRequest$(
+            context,
             {
                 security: securitySettings$,
                 method: "POST",
@@ -371,7 +377,11 @@ export class Apis extends ClientSDK {
             throw result;
         } else {
             const responseBody = await response.text();
-            throw new errors.SDKError("Unexpected API response", response, responseBody);
+            throw new errors.SDKError(
+                "Unexpected API response status or content-type",
+                response,
+                responseBody
+            );
         }
     }
 
@@ -433,6 +443,7 @@ export class Apis extends ClientSDK {
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
         };
         const request = this.createRequest$(
+            context,
             {
                 security: securitySettings$,
                 method: "GET",
@@ -556,7 +567,11 @@ export class Apis extends ClientSDK {
             throw result;
         } else {
             const responseBody = await response.text();
-            throw new errors.SDKError("Unexpected API response", response, responseBody);
+            throw new errors.SDKError(
+                "Unexpected API response status or content-type",
+                response,
+                responseBody
+            );
         }
     }
 
@@ -600,6 +615,7 @@ export class Apis extends ClientSDK {
             errorCodes: ["400", "401", "403", "404", "409", "429", "4XX", "500", "5XX"],
         };
         const request = this.createRequest$(
+            context,
             {
                 security: securitySettings$,
                 method: "POST",
@@ -723,7 +739,11 @@ export class Apis extends ClientSDK {
             throw result;
         } else {
             const responseBody = await response.text();
-            throw new errors.SDKError("Unexpected API response", response, responseBody);
+            throw new errors.SDKError(
+                "Unexpected API response status or content-type",
+                response,
+                responseBody
+            );
         }
     }
 }

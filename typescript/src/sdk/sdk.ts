@@ -38,17 +38,17 @@ export class UnkeyTs extends ClientSDK {
     }
 
     private _liveness?: Liveness;
-    get liveness() {
+    get liveness(): Liveness {
         return (this._liveness ??= new Liveness(this.options$));
     }
 
     private _keys?: Keys;
-    get keys() {
+    get keys(): Keys {
         return (this._keys ??= new Keys(this.options$));
     }
 
     private _apis?: Apis;
-    get apis() {
+    get apis(): Apis {
         return (this._apis ??= new Apis(this.options$));
     }
 }
