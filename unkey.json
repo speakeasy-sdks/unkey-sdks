@@ -601,6 +601,7 @@
     "/v1/liveness": {
       "get": {
         "tags": ["liveness"],
+        "operationId": "checkLiveness",
         "responses": {
           "200": {
             "description": "The configured services and their status",
